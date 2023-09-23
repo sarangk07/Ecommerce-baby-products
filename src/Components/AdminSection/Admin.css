@@ -1,0 +1,43 @@
+.mainEditDiv{
+    border: 1px solid lightblue;
+    background-color: rgb(221, 218, 218);
+    align-items: center;
+    text-align: center;
+    width: 70%;
+}
+.navbar-brand1{
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.navLINK{
+    color: azure;
+}
+.togler{
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+.navDiv{
+    background-color: black;
+}
+.editH1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(88, 148, 163);
+}
+.labelEdit{
+    color: cadetblue;
+}
+.inputEdit{
+    border: 1px solid tomato;
+    border-radius: 10px;
+}
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fbc2eb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
+    }
+

@@ -1,0 +1,33 @@
+/* ScrollingText.css */
+.scrolling-text {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+  
+  marquee {
+    font-size: 20px;
+    color: #333;
+    padding: 10px;
+    animation: scrollText 10s linear infinite;
+  }
+  
+  @keyframes scrollText {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  .Link{
+    text-decoration: none;
+    color: rgb(165, 32, 32);
+    font-family: cursive;
+  }
+  .superbaby{
+    width: 80px;
+    height: 80px;
+  }
+ 
+  

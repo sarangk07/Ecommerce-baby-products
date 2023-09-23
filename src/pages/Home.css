@@ -1,0 +1,67 @@
+header{
+    background-color: aqua;
+}
+.navbar-brand{
+    color: rgb(7, 7, 7);
+    font-weight: 1000;
+    font-family: cursive;
+    
+}
+.Chuz:hover{
+    color: aqua;
+}
+/* .navbar{
+    display: flex;
+    position: fixed;
+    z-index: 3;
+} */
+/* .image-container {
+    position: relative;
+    width: 140px; /* Adjust the width and height to match your image size */
+    /* height: 60px;
+  } */
+  
+  .default-image,
+  .hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 0%;
+    transition: opacity 0.3s ease; 
+  }
+  
+  .hover-image {
+    opacity: 0;
+  }
+  
+  .image-container:hover .default-image {
+    opacity: 0; 
+  }
+  
+  .image-container:hover .hover-image {
+    opacity: 1; 
+  } 
+
+  .navBTNLINK{
+    font-family: 'Times New Roman', Times, serif;
+    color: #000; 
+    text-decoration: none;
+  }
+
+  .navBTNLINK:hover{
+    color: #7a7878;
+  }
+  .babyLogo{
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .home{
+    background-color: rgb(228, 241, 241);
+  }
+  .navbar{
+    background-color: rgb(249, 250, 250);
+
+  }
+  

@@ -1,0 +1,78 @@
+export const UsersDetails = [
+    {
+    id:1,
+    name : 'Sarang',
+    password:123,
+    email:"sarang@gmail.com",
+    image:"https://imgs.search.brave.com/fGKRfK7kAzpuXFipWjdPOeXvWw3X18aXJgZgL1y71Zg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMtaW4uYm1zY2Ru/LmNvbS9pZWRiL2Fy/dGlzdC9pbWFnZXMv/d2Vic2l0ZS9wb3N0/ZXIvbGFyZ2UvdG92/aW5vLXRob21hcy0z/NzYyOC0yNS0wNy0y/MDE4LTA2LTQyLTAz/LmpwZw",
+    phone:88888,
+    city:"karivellur",
+    country:"india",
+    product: {
+        id: 1,
+        name: "police Car",
+        description: "powerfull RC police car with built in AI",
+        price: 119.99,
+        image: "https://images.prod.babyshopgroup.io/images/PM-42934%23a/512x512.jpeg",
+        type: "toys",
+        quantity: 1,
+      }
+},
+{
+    id:2,
+    name : 'Souban',
+    password:123,
+    email:"souban@gmail.com",
+    image:"https://imgs.search.brave.com/iLldiclvS4N35hxEkOPVhFWYBWj7joXAqC2CnYpXISY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9i/L2I3L01hbW1vb3R0/eV8yMDIzLmpwZw",
+    phone:958,
+    city:"malappuram",
+    country:"india",
+    product: {
+        id: 1,
+        name: "foxy",
+        description: "Bold N Elegant Little foxy  Print Asymmetrical Waistcoat  for Boys",
+        price: 119.99,
+        image: "https://images.prod.babyshopgroup.io/images/143616_140%23a/512x512.jpeg",
+        type: "toys",
+        quantity: 1,
+      }
+},
+{
+    id:3,
+    name : 'Das',
+    password:123,
+    email:"das@gmail.com",
+    image:"https://imgs.search.brave.com/m9pvXRVqbj7uWSUyHAgDLALzJtpYuFhhmJOCNO7Crv0/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QlpEUTNaalEy/T1dZdE5HSTJZeTAw/TVRFekxUZzBPVE10/T0RRME1qY3dPVE5o/T0RBM1hrRXlYa0Zx/Y0dkZVFYVnlOamt3/T1RnNE1UQUAuanBn",
+    phone:878,
+    city:"edappal",
+    country:"india",
+    product: {
+        id: 1,
+        name: "Shirt Bow & Pant",
+        description: "Bold N Elegant Little Man Stripe Print Asymmetrical Waistcoat with Shirt Bow & Pant 3 pc Suit Party Clothing Set for Boys",
+        price: 119.99,
+        image: "https://m.media-amazon.com/images/I/61nry-BcKAL._UX522_.jpg",
+        type: "clothes",
+        quantity: 1,
+      }
+},
+{
+    id:4,
+    name : 'Sabu',
+    password:123,
+    email:"sab@gmail.com",
+    image:"https://imgs.search.brave.com/G94cU_KF0QL7XmKeq4h-h4cgWtmb37ARCC4mqPsqSx4/rs:fit:500:0:0/g:ce/aHR0cDovL3N0YXJz/dW5mb2xkZWQuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE3/LzAzL0R1bHF1ZXIt/U2FsbWFhbi5qcGc",
+    phone:12,
+    city:"Vilagad",
+    country:"india",
+    product: {
+        id: 1,
+        name: "teddy",
+        description: "Bold N Elegant Little teddy for Boys and girls",
+        price: 200,
+        image: "https://images.prod.babyshopgroup.io/images/176443_10%23a/512x512.jpeg",
+        type: "toys",
+        quantity: 1,
+      }
+},
+];
