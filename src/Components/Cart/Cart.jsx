@@ -68,8 +68,10 @@ function Cart() {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="container-fluid">
-      <Navbar />
+      
       {cart.length > 0 ? (
         <section className="h-100 h-custom" style={{ backgroundColor: "#eee" }}>
           <MDBContainer className="h-100 py-5">
@@ -109,7 +111,7 @@ function Cart() {
                             label="Address"
                             type="text"
                             size="lg"
-                            defaultValue="Shipping Address"
+                            placeholder="Shipping Address"
                             onChange={(e) => setAddress(e.target.value)}
                           />{" "}
                           <br />
@@ -118,7 +120,7 @@ function Cart() {
                             label="Card ID"
                             type="text"
                             size="lg"
-                            defaultValue="ID"
+                            placeholder="ID"
                             onChange={(e) => setCard(e.target.value)}
                           />{" "}
                           <br />
@@ -176,27 +178,29 @@ function Cart() {
 
                               <div className="d-flex align-items-center row">
                                 <p className="fw-bold mb-0 me-5 pe-3">
-                                  {item.price} ₹
+                                ₹ {item.price} 
                                 </p>
-
+                      
                                 <div className="def-number-input number-input safari_only col-sm">
                                   <button
+                                  type="button"
                                     style={{ border: "1px" }}
-                                    className="minus mx-2 "
+                                    className="minus mx-2 btn btn-secondary"
                                     onClick={() => countMinuse(item.id)}
                                   >
                                     {/* {" "} */}-
                                   </button>
                                   <span>{item.qty} </span>
                                   <button
-                                    className="plus"
+                                    type="button"
                                     style={{ border: "1px" }}
+                                    className="minus mx-2 btn btn-secondary"
                                     onClick={() => countPluse(item.id)}
                                   >
                                     +
                                   </button>
                                 </div>
-                              </div>
+                              </div><br />
                               <MDBTypography tag="h5" className="fw-bold  mx-5">
                                 Total:
                               </MDBTypography>
@@ -205,10 +209,10 @@ function Cart() {
                                 style={{ width: "100px" }}
                                 className="fw-bold mx-5 "
                               >
-                                {item.price * item.qty} ₹
+                               ₹ {item.price * item.qty} 
                               </MDBTypography>
-                              <button onClick={() => removeItem(item.id)}>
-                                -
+                              <button type="button" class="btn btn-outline-danger" onClick={() => removeItem(item.id)}>
+                                X
                               </button>
                             </div>
                             <h2>{total}</h2>
@@ -239,6 +243,7 @@ function Cart() {
         </div>
       )}
     </div>
+    </>
   );
 }
 
