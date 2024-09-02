@@ -1,58 +1,40 @@
 // Navbar.js
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate,useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Home.css";
 import Search from "./Products/Search";
 
-
-
 function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track user's login status
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    // Check if the user is logged in when the component mounts
     const loggedIn = localStorage.getItem("loggedIn") === "true";
     setIsLoggedIn(loggedIn);
   }, []);
 
-
-
-
-useEffect(() => {
-    // get User name from local storage
-const userss = JSON.parse(localStorage.getItem("users"));
-
-
-  if(userss && userss.length>0){
-    setUserName(userss[0].username);
-  }else{
-    setUserName("");
-  }
-  
-  }, []);
- 
-  // console.log(userName);
   useEffect(() => {
-    // When the route changes, re-render the Navbar component to update the UI
-    setIsLoggedIn(localStorage.getItem("loggedIn") === "true");
-  }, [location.pathname]); // Listen for changes in the route path
+    const userss = JSON.parse(localStorage.getItem("users"));
+    if (userss && userss.length > 0) {
+      setUserName(userss[0].username);
+    } else {
+      setUserName("");
+    }
+  }, []);
 
+  useEffect(() => {
+    setIsLoggedIn(localStorage.getItem("loggedIn") === "true");
+  }, [location.pathname]);
 
   const handleLogout = () => {
-    // Clear the logged-in flag in localStorage and update the state
     localStorage.removeItem("loggedIn");
-    
-    
     setIsLoggedIn(false);
   };
 
   const handleLogIn = () => {
-    // Clear the logged-in flag in localStorage and update the state
-    
     navigate("/Login");
   };
 
@@ -63,14 +45,28 @@ const userss = JSON.parse(localStorage.getItem("users"));
 
   return (
     <div>
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <div class=" navbar container-fluid">
-          <div class="navbar-brand">
+      <nav className="navbar navbar-expand-md navbar-light bg-light">
+        <div className="container-fluid">
+          <Link to="/" className="navbar-brand d-flex align-items-center">
             <img src={require("../img/NavIMG/babyLogo.png")} className="babyLogo" alt="logo" />
-            BABY <span className="Chuz">LanD</span>{" "}
-          </div>
+            BABY <span className="Chuz">LanD</span>
+          </Link>
+
+          <form className="d-flex flex-grow-1" onSubmit={onSearch}>
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button className="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+
           <button
-            class="navbar-toggler"
+            className="navbar-toggler ms-2"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -78,50 +74,50 @@ const userss = JSON.parse(localStorage.getItem("users"));
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <Link to="/" class="nav-link navBTNLINK">
+
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link to="/" className="nav-link navBTNLINK">
                   Home
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link to="/" class="nav-link navBTNLINK">
+              <li className="nav-item">
+                <Link to="/" className="nav-link navBTNLINK">
                   Offers
                 </Link>
               </li>
-              
 
-              <li class="nav-item navBTNLINK">
-                <div class="dropdown ">
+              <li className="nav-item navBTNLINK">
+                <div className="dropdown">
                   <button
-                    class="btn dropdown-toggle "
+                    className="btn dropdown-toggle"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     Products
                   </button>
-                  <ul class="dropdown-menu navBTNLINK">
+                  <ul className="dropdown-menu navBTNLINK">
                     <li>
-                      <Link class="nav-link" to="/toys">
+                      <Link className="nav-link" to="/toys">
                         Toys
                       </Link>
                     </li>
                     <li>
-                      <Link class="nav-link" to="/Dress">
+                      <Link className="nav-link" to="/Dress">
                         Dresses
                       </Link>
                     </li>
                     <li>
-                      <Link class="nav-link" to="/Food">
+                      <Link className="nav-link" to="/Food">
                         Feedings
                       </Link>
                     </li>
                     <li>
-                      <Link class="nav-link" to="/AllProducts">
+                      <Link className="nav-link" to="/AllProducts">
                         Other
                       </Link>
                     </li>
@@ -129,76 +125,35 @@ const userss = JSON.parse(localStorage.getItem("users"));
                 </div>
               </li>
 
+              {isLoggedIn && (
+                <>
+                  <li className="nav-item">
+                    <Link to="/Cart" className="nav-link navBTNLINK">
+                      <img src={require("../img/shopping-cart.png")} alt="" className="navIcons" />
+                    </Link>
+                  </li>
+                  <li className="nav-item navBTNLINK">
+                    <button className="nav-link btn btn-link" onClick={handleLogout}>
+                      Logout
+                    </button>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link navBTNLINK">
+                      <img src={require("../img/userIcon.png")} alt="" className="navIcons" />
+                      &nbsp;&nbsp;{userName}
+                    </Link>
+                  </li>
+                </>
+              )}
 
-              <li class="nav-item">
-              {isLoggedIn ? (
-                
-                  <Link to="/Cart" class="nav-link navBTNLINK">
-                    <img src={require("../img/shopping-cart.png")} alt=""  className="navIcons"/>
-                    
-                  </Link>
-                
-                ) : (
-                  " "
-                )}
-              </li>
-
-{/* login logout text */}
- <li class="nav-item navBTNLINK">
-  {isLoggedIn ? (
-  <button
-    class="nav-link btn btn-link "
-    onClick={handleLogout}
-  >
-    Logout
-  </button>
-) : (
-  <button
-    class="nav-link btn btn-link "
-    onClick={handleLogIn}
-  >
-    Login
-  </button>
-)}
-</li>
-
-
-{/* user profile */}
-
-
-              
-
- <li class="nav-item">
-                
-    {isLoggedIn ? (
-      <>
-      <Link to="/" class="nav-link navBTNLINK">
-        <img src={require("../img/userIcon.png")} alt="" className="navIcons" />&nbsp;&nbsp;
-      </Link> 
-      <Link to="/" class="nav-link navBTNLINK">
-        {userName}
-      </Link>
-      </>
-        ) : (
-        " "
-      )}
-  </li>
-              
-
-
+              {!isLoggedIn && (
+                <li className="nav-item navBTNLINK">
+                  <button className="nav-link btn btn-link" onClick={handleLogIn}>
+                    Login
+                  </button>
+                </li>
+              )}
             </ul>
-            <form class="d-flex" onSubmit={onSearch}>
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>

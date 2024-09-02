@@ -1,18 +1,27 @@
 import React, { useState } from "react";
 import AdminNavbar from "./AdminNavbar";
-
+import { Avatar,Wrap,WrapItem} from '@chakra-ui/react'
 import { UsersDetails } from "./Users";
 import { useNavigate } from "react-router-dom";
 import { MDBTable, MDBTableHead, MDBTableBody } from "mdb-react-ui-kit";
 
+
+
+
+
 function AdminUserInfo() {
   const [user] = useState(UsersDetails);
+  
 
+
+  
 
   const navigate = useNavigate();
 
   const handleDetails = (userid) => {
+    
     navigate(`/DetailsUsers/${userid}`);
+    
   };
   
   console.log(user);
@@ -39,12 +48,13 @@ function AdminUserInfo() {
                 <h6 className="card-title">{users.name}</h6>
               </td>
               <td>
-                <img
-                  src={users.image}
-                  className="card-img-top"
-                  alt="..."
-                  style={{ height: "3rem", width: "3rem" }}
-                />
+
+              <Wrap>
+              <WrapItem>
+                <Avatar name={users.name} src={users.image} />
+              </WrapItem>
+              </Wrap>
+
               </td>
               <td>
                 <p className="card-text">{users.email}</p>

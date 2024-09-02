@@ -39,11 +39,10 @@ function Login() {
     );
 
     const admins = AdminDetails.find(
-      (u) => u.name === username && u.password == password
+      (u) => u.name == username && u.password == password
     );
 
     if (user) {
-      // Set a flag in local storage to indicate the user is logged in
       localStorage.setItem("loggedIn", JSON.stringify(true));
       // localStorage.setItem('loggedIn', 'true');
       alert("Login successful!");

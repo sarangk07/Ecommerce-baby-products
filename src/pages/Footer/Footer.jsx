@@ -6,29 +6,30 @@ import './Footer.css'
 export default function Footer() {
   return (
     <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
-      <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-        <div className='me-5 d-none d-lg-block'>
+      <section className='d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between p-4 border-bottom'>
+        <div className='d-none d-lg-block me-5'>
           <span>Get connected with us on social networks:</span>
         </div>
 
-        <div>
+        <div className='d-flex flex-row align-items-center'>
           <Link className='me-4 text-reset'>
-            <img src={require('./icons/github.png')} alt="" className='footerIcons'/>
+            <img src={require('./icons/github.png')} alt="GitHub" className='footerIcons'/>
           </Link>
           <Link className='me-4 text-reset'>
-            <img src={require('./icons/linkedin.png')} alt="" className='footerIcons'/>
+            <img src={require('./icons/linkedin.png')} alt="LinkedIn" className='footerIcons'/>
           </Link>
           <Link className='me-4 text-reset'>
-            <img src={require('./icons/facebook.png')} alt="" className='footerIcons'/>
+            <img src={require('./icons/facebook.png')} alt="Facebook" className='footerIcons'/>
           </Link>
           <Link className='me-4 text-reset'>
-            <img src={require('./icons/youtube.png')} alt="" className='footerIcons'/>
+            <img src={require('./icons/youtube.png')} alt="YouTube" className='footerIcons'/>
           </Link>
           <Link className='me-4 text-reset'>
-            <img src={require('./icons/twitter.png')} alt="" className='footerIcons'/>
+            <img src={require('./icons/twitter.png')} alt="Twitter" className='footerIcons'/>
           </Link>
         </div>
       </section>
+
 
       <section className=''>
         <MDBContainer className='text-center text-md-start mt-5'>

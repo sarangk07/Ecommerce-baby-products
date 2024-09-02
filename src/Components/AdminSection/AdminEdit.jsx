@@ -9,7 +9,7 @@ function AdminEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Find the editProduct directly based on the ID parameter
+ 
   const editProduct = product.find((product) => product.id === parseInt(id)) || {
     id: '',
     name: '',

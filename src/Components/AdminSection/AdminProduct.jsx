@@ -67,8 +67,8 @@ function AdminProduct() {
                   <td>₹ {products.price}</td>
                   <td>₹ {products.offerPrice}</td>
                   <td>
-                    <img src="https://imgs.search.brave.com/H5UDlraxzigteqS0QhSHz6dwckD4jNiPh0E0nRkpWE0/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pY29u/cy52ZXJ5aWNvbi5j/b20vcG5nLzEyOC9v/YmplY3QvbHVjcS1i/YWNrc3RhZ2UvZWRp/dC00NS5wbmc"  width={30}  alt="" onClick={() => handleEdit(products.id)} />&nbsp;&nbsp;
-                    <img src="https://imgs.search.brave.com/wTON4k3A8PoSVdACXuynci365cwVKk_u5zDZ4YIwcTk/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZs/YXRpY29uLmNvbS8x/MjgvMzQwNS8zNDA1/MjQ0LnBuZw" width={30} alt="" onClick={() => removeItem(products.id)} />
+                    <img src="https://imgs.search.brave.com/H5UDlraxzigteqS0QhSHz6dwckD4jNiPh0E0nRkpWE0/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pY29u/cy52ZXJ5aWNvbi5j/b20vcG5nLzEyOC9v/YmplY3QvbHVjcS1i/YWNrc3RhZ2UvZWRp/dC00NS5wbmc"  width={30}  alt="" onClick={() => handleEdit(products.id)} className='adminIcons'/>&nbsp;&nbsp;
+                    <img src="https://imgs.search.brave.com/wTON4k3A8PoSVdACXuynci365cwVKk_u5zDZ4YIwcTk/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZs/YXRpY29uLmNvbS8x/MjgvMzQwNS8zNDA1/MjQ0LnBuZw" width={30} alt="" onClick={() => removeItem(products.id)} className='adminIcons'/>
                   </td>
                 </tr>
               ))}

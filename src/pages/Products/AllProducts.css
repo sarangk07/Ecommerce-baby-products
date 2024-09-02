@@ -20,3 +20,7 @@
 h2{
     font-family: 'Courier New', Courier, monospace;
 }
+.CARTimg{
+    z-index: 2;
+    
+}

@@ -59,14 +59,17 @@ function Cart() {
   };
 
   const handleBuy = () => {
-    if (!name && !address && !card) {
-      alert("please fill the form");
-      return navigate("/");
+    if (!name || !address || !card) {
+      alert("Please fill the form");
+      return;
     }
-
+  
+    // Clear the cart after purchase
+    setCart([]);
+  
+    // Navigate to the Thank You page
     navigate("/ThankYou");
   };
-
   return (
     <>
     <Navbar />
@@ -135,11 +138,6 @@ function Cart() {
                           >
                             Buy now
                           </button>
-                          <MDBTypography
-                            tag="h5"
-                            className="fw-bold mb-5"
-                            style={{ position: "absolute", bottom: "0" }}
-                          ></MDBTypography>
                         </form>
                       </MDBCol>
 
@@ -167,14 +165,11 @@ function Cart() {
 
                             <div className="flex-grow-1 ms-3 container">
                               <a href="#!" className="float-end text-black">
-                                <MDBIcon fas icon="times" />
+                                <MDBIcon fas icon="times" onClick={() => removeItem(item.id)} />
                               </a>
                               <MDBTypography tag="h5" className="text-primary">
                                 {item.name}
                               </MDBTypography>
-                              {/* <MDBTypography tag="h6" style={{ color: "#9e9e9e" }}>
-                                  Color: {item.color}
-                                </MDBTypography> */}
 
                               <div className="d-flex align-items-center row">
                                 <p className="fw-bold mb-0 me-5 pe-3">
@@ -188,7 +183,7 @@ function Cart() {
                                     className="minus mx-2 btn btn-secondary"
                                     onClick={() => countMinuse(item.id)}
                                   >
-                                    {/* {" "} */}-
+                                    - 
                                   </button>
                                   <span>{item.qty} </span>
                                   <button
@@ -215,9 +210,16 @@ function Cart() {
                                 X
                               </button>
                             </div>
-                            <h2>{total}</h2>
                           </div>
                         ))}
+
+                        {/* Grand Total Section */}
+                        <div className="d-flex justify-content-end">
+                          <MDBTypography tag="h4" className="fw-bold">
+                            Grand Total: ₹ {total()}
+                          </MDBTypography>
+                        </div>
+
                       </MDBCol>
                     </MDBRow>
                   </MDBCardBody>
@@ -228,15 +230,15 @@ function Cart() {
         </section>
       ) : (
         <div className="emptycartDiv container">
-          <div className="row">
-            <div className="col-md-4">
+          <div className="row text-center">
+            <div className="col-12 col-md-4">
               <img
                 src={require("./funny-4419254_640.png")}
                 alt=""
-                className="emptycartIMG"
+                className="emptycartIMG img-fluid"
               />
             </div>
-            <div className="col-md-6 headingDiv">
+            <div className="col-12 col-md-8 d-flex align-items-center justify-content-center">
               <h1>Your Cart is Empty</h1>
             </div>
           </div>

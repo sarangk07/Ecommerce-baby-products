@@ -9,9 +9,9 @@ import {
 
 export default function Card1() {
   return (
-    <MDBCard background='dark' border="none" className='text-white card1'>
+    <MDBCard background='dark'  border="none" className='text-white card1'>
     <Link to='/Dress'>
-      <MDBCardImage overlay src='https://www.kiddies-kingdom.com/modules/homeslider/images/53ef33b40287c01d3c22e61fae4fbc78.jpg' alt='...' />
+      <MDBCardImage className='small-image'  overlay src='https://www.kiddies-kingdom.com/modules/homeslider/images/53ef33b40287c01d3c22e61fae4fbc78.jpg' alt='...' />
       <MDBCardOverlay>
         {/* <MDBCardTitle>Card title</MDBCardTitle>
         <MDBCardText>
