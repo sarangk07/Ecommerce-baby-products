@@ -19,9 +19,10 @@ function Toys() {
 
         {toysItems.map((item) => (
           <div class="card col-sm-4 m-3 " style={{ width: "18rem"}} key={item.id}>
-            <img src={item.image} class="card-img-top bg-dark" alt="..." style={{ height: "15rem", zIndex:1}}/>
+            <img src={item.image} class="card-img-top " alt={item.name} style={{ height: "15rem", zIndex:1}}/>
             <div class="card-body">
               <h5 class="card-title">{item.name}</h5>
+              <p class="card-text">{item.details}</p>
               
             </div>
             <ul class="list-group list-group-flush">

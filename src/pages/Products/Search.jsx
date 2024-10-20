@@ -28,15 +28,13 @@ function Search({ searchQuery }) {
                 <img
                   src={val.image}
                   className="card-img-top"z
-                  alt="..."
+                  alt={val.name}
                   style={{ height: "15rem" }}
                 />
                 <div className="card-body">
                   <h5 className="card-title">{val.name}</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                  </p>
+                  <p class="card-text">{val.details}</p>
+
                 </div>
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item"> ₹ {val.price}</li>

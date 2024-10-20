@@ -26,10 +26,10 @@ function AllProducts() {
         <h2>All Products</h2>
         {product.map((item) => (
           <div class="card col-sm-4 m-3" style={{ width: "18rem" }} key={item.id}>
-            <img src={item.image} class="card-img-top CARTimg bg-dark" alt="..." style={{ height: "15rem" }}/>
+            <img src={item.image} class="card-img-top CARTimg " alt={item.name} style={{ height: "15rem" }}/>
             <div class="card-body ">
               <h5 class="card-title">{item.name}</h5>
-              {/* <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
+              <p class="card-text">{item.details}</p>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"> ₹ {item.price}</li>

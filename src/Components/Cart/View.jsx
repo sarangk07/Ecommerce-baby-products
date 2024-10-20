@@ -21,10 +21,10 @@ function View() {
   const navigate = useNavigate();
 
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track user's login status
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
 
   useEffect(() => {
-    // Check if the user is logged in when the component mounts
+
     const loggedIn = localStorage.getItem("loggedIn") === "true";
     setIsLoggedIn(loggedIn);
   }, []);
@@ -65,13 +65,13 @@ function View() {
             <MDBCard className="detailsView">
               <MDBCardBody>
                 <MDBCardTitle>{item.name}</MDBCardTitle>
-                <MDBCardText>{item.description}</MDBCardText>
+                <MDBCardText>{item.details}</MDBCardText>
                 <MDBCardText>
                   <strong>Price:</strong> ₹{item.price}
                 </MDBCardText>
       
                 {isLoggedIn === true ? (
-                  <button onClick={addToCart} className="btn btn-primary">add to cart</button>
+                  <button onClick={addToCart} className="btn btn-primary">Add to cart</button>
                 ) : (
                   <button
                     onClick={() => {
@@ -80,7 +80,7 @@ function View() {
                     }}
                     className="btn btn-primary"
                   >
-                    add to cart
+                    Add to cart
                   </button>
                 )}
               </MDBCardBody>
