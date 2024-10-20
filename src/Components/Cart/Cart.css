@@ -19,13 +19,13 @@
     width: 24rem;
     height: 27rem;
     border-radius: 20px;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     margin-bottom: 10px;
 }
 .detailsView{
     background-color: rgb(245, 242, 248);
     width: 24rem;
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 .img{
     border-radius: 50px;
